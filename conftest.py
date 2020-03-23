@@ -5,7 +5,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 @pytest.fixture(scope="session")
 def browser():
-    browser = webdriver.Chrome(ChromeDriverManager().install())
+    # browser = webdriver.Chrome(ChromeDriverManager().install())
+    browser = webdriver.Chrome()
     browser.maximize_window()
     yield browser
     print("\nquit browser..")
