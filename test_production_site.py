@@ -41,7 +41,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 #                                                    f"{expected_title_text}\n"
 #     sleep(2)
 #
-link_my_ass = "http://pub.ast.safib.ru/"
+link_my_ass = "https://xn--80akicokc0aablc.xn--p1ai/"
 
 
 def check_open(link=link_my_ass):
