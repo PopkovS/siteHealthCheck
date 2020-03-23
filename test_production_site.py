@@ -1,3 +1,5 @@
+from time import sleep
+
 import pytest
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
@@ -25,7 +27,8 @@ def is_element_present(browser, how, what, timeout=4):
 
 
 def test_display(browser):
-    browser.get("https://xn--80akicokc0aablc.xn--p1ai/")
+    browser.get("http://pub.ast.safib.ru/")
+    # browser.get("https://xn--80akicokc0aablc.xn--p1ai/")
     while True:
         assert is_element_present(browser=browser, how=By.CSS_SELECTOR, what=".introduction"), "Не найден заголовок на " \
                                                                                                 "странице "
@@ -37,4 +40,5 @@ def test_display(browser):
                                                        f"{title_main_page}\n" \
                                                        f"Отличается от ожидаемого:\n" \
                                                        f"{expected_title_text}\n"
+        sleep(2)
 
