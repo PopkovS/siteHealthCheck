@@ -1,10 +1,11 @@
 import pytest
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture(scope="session")
 def browser():
-    browser = webdriver.Chrome()
+    browser = webdriver.Chrome(ChromeDriverManager().install())
     browser.maximize_window()
     yield browser
     print("\nquit browser..")
