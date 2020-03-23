@@ -53,11 +53,11 @@ def check_open(link=link_my_ass):
 
 
 def test_display(link=link_my_ass):
-    while True:
-        assert check_open(), f"\nСайт: '{link}' не открывается"
-        response = requests.get(link).text
-        text_tuple = ("О продукте", "Сертификаты", "Купить", "Акции", "Скачать",
-                      "Партнеры и совместимость", "Совместимость", "О нас", "Личный кабинет")
-        for i in text_tuple:
-            assert i in response, f'\nTeкст "{i}" не найден в коде страницы'
-        sleep(1)
+    # while True:
+    assert check_open(), f"\nСайт: '{link}' не открывается"
+    response = requests.get(link).text
+    text_tuple = ("О продукте", "Сертификаты", "Купить", "Акции", "Скачать",
+                  "Партнеры и совместимость", "Совместимость", "О нас", "Личный кабинет")
+    for i in text_tuple:
+        assert i in response, f'\nTeкст "{i}" не найден в коде страницы'
+
